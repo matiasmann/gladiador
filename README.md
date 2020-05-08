@@ -3,9 +3,9 @@
 
 Gladiador is a highly optimised theme, designed with sustainable principles in mind, using modern web development techniques.
 
-* [Wiki](https://github.com/BinaryMoon/jarvis/wiki)
-* [Theme Styleguide](https://matiasmann.github.io/jarvis/docs/)
-* [Github Repository](https://github.com/BinaryMoon/jarvis/)
+* [Wiki](https://github.com/matiasmann/gladiador/wiki)
+* [Theme Styleguide](https://matiasmann.github.io/gladiador/docs/)
+* [Github Repository](https://github.com/matiasmann/gladiador/)
 
 ## Philosophy
 
