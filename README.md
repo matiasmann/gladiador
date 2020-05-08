@@ -50,5 +50,7 @@ Gladiador uses Gulp to process files. You probably won't need to use it, but jus
 * `gulp buildTOC` Generate Table of Contents for style.css file.
 * `gulp buildCritical` Create [critical path CSS](https://www.smashingmagazine.com/2015/08/understanding-critical-css/#what-is-critical-css) styles.
 * `gulp buildSVG` Clean up exported svg files.
-* `gulp buildPot` Build the latest version of the __.pot__ language file.## Credits
+* `gulp buildPot` Build the latest version of the __.pot__ language file.
+
+## Credits
 * Based on Jarvis https://github.com/BinaryMoon/jarvis, (C) 2016-2020 Binary Moon, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
