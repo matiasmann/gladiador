@@ -1,0 +1,41 @@
+.gladiador-font-picker {
+	border: 1px solid #dddddd;
+	background: #ffffff;
+	padding: 8px;
+	border-radius: 4px;
+	margin: 1px;
+	max-height: 20rem;
+	overflow-y: scroll;
+	list-style-type: none;
+}
+
+.gladiador-font-picker input[type=radio] {
+	display: none;
+}
+
+.gladiador-font-picker label {
+	padding: 4px 8px;
+	margin: 0;
+	border-radius: 2px;
+	border: 1px solid transparent;
+	font-size: 2em;
+	line-height: 1.2em;
+	display: block;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.gladiador-font-picker label + label {
+	margin-top: 4px;
+}
+
+.gladiador-font-picker label.selected {
+	background: #dddddd;
+	border-color: #999;
+	color: #000000;
+}
+
+.gladiador-font-picker label:hover {
+	border-color: #999;
+	cursor: pointer;
+}

@@ -1,0 +1,141 @@
+
+/*!
+ * ## - Widgets
+ */
+
+.widget {
+
+	// Remove any margins on media elements widgets to prevent large white spaces from appearing.
+	.wp-playlist,
+	.mejs-container,
+	.jetpack-video-wrapper {
+
+		margin: 0;
+
+	}
+
+	// categories (and category dropdown)
+	&.widget_archive,
+	&.widget_categories {
+
+		.form-select {
+
+			margin-bottom: 0;
+
+		}
+
+	}
+
+	// recent comments
+	&.widget_recent_comments {
+
+		table.recentcommentsavatar {
+
+			width: 100%;
+			margin: 0;
+			border: none;
+
+			td {
+
+				padding-bottom: ( $grid-line-height / 2 );
+				border: none;
+
+				&.recentcommentsavatarend,
+				&.recentcommentsavatartop {
+
+					padding: auto;
+
+					a {
+
+						display: block;
+						line-height: 0;
+
+					}
+
+				}
+
+			}
+
+			tr,
+			tr:nth-child( odd ) {
+
+				background: transparent;
+				border: none;
+
+			}
+
+		}
+
+	}
+
+	// text
+	&.widgt_text {
+
+		ul {
+
+			list-style-type: $style-list-style-type;
+			margin-inline-start: $grid-gutter;
+
+		}
+
+	}
+
+	// image widget
+	&.widget_image {
+
+		img {
+
+			margin: 0;
+
+		}
+
+		.wp-caption {
+
+			max-width: 100%;
+			margin-bottom: 0;
+
+			.wp-caption-text {
+
+				font-size: 1em;
+
+			}
+
+		}
+
+	}
+
+	// rss widget
+	&.widget_rss {
+
+		ul {
+
+			padding: 0;
+			margin: 0;
+
+		}
+
+		li {
+
+			list-style-type: none;
+			margin-bottom: $grid-line-height;
+
+			.rss-date {
+
+				@include post-meta-data;
+				opacity: $style-opacity-element;
+				display: block;
+				margin-bottom: ( $grid-line-height / 2 );
+
+			}
+
+			a.rsswidget {
+
+				font-weight:bold;
+
+			}
+
+		}
+
+	}
+
+}

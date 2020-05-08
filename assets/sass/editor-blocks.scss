@@ -1,0 +1,19 @@
+
+@import "lib/variables/index";
+@import "lib/mixins/index";
+
+.editor-rich-text__tinymce.mce-content-body {
+
+	line-height: inherit;
+
+}
+
+/**
+ * Override colours set in the Gutenberg stylesheets.
+ */
+.editor-post-title .editor-post-title__input,
+.block-editor textarea:focus {
+
+	color: currentColor;
+
+}

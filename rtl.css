@@ -1,0 +1,230 @@
+fieldset {
+  margin: 0 0 1.5rem
+}
+ol,
+ul {
+  margin: 0 0 1.5rem;
+  padding: 0 1.5rem 0 0
+}
+dl dd {
+  margin: 0 1.5rem 1.5rem
+}
+table caption,
+table th {
+  text-align: right
+}
+.entry-meta a.current-page {
+  box-shadow: -.2rem .2rem 0 var(--foreground-color)
+}
+.button:focus,
+.button:hover,
+.entry-author .avatar,
+.wp-block-button__link:focus,
+.wp-block-button__link:hover,
+button:focus,
+button:hover,
+input[type=button]:focus,
+input[type=button]:hover,
+input[type=reset]:focus,
+input[type=reset]:hover,
+input[type=submit]:focus,
+input[type=submit]:hover {
+  box-shadow: -.4rem .4rem 0 var(--foreground-color)
+}
+@supports ((-webkit-appearance:none) or (-moz-appearance:none) or (appearance:none)) {
+  input[type=checkbox]:checked::after {
+    right: .1rem
+  }
+  input[type=radio]:checked::after {
+    right: .175rem
+  }
+}
+input[type=date]:focus,
+input[type=datetime-local]:focus,
+input[type=email]:focus,
+input[type=month]:focus,
+input[type=number]:focus,
+input[type=password]:focus,
+input[type=search]:focus,
+input[type=tel]:focus,
+input[type=text]:focus,
+input[type=time]:focus,
+input[type=url]:focus,
+input[type=week]:focus,
+select:focus,
+textarea:focus {
+  box-shadow: -.4rem .4rem 0 var(--foreground-color)
+}
+html {
+  direction: rtl;
+  unicode-bidi: normal
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0 0 1.2rem
+}
+.wp-caption {
+  margin: 0 0 3rem
+}
+.alignleft {
+  float: right
+}
+.alignright {
+  float: left
+}
+.screen-reader-text {
+  margin: -1px
+}
+.screen-reader-text:focus {
+  padding: 15px 23px 14px;
+  right: 5px
+}
+.screen-reader-shortcut {
+  padding: 15px 23px 14px;
+  right: -300px;
+  box-shadow: 0 0 2px 2px rgba(0,0,0,.6)
+}
+.screen-reader-shortcut:focus {
+  right: 6px
+}
+.widget a[aria-current] {
+  margin-right: -.2rem;
+  margin-left: -.2rem
+}
+.gallery .gallery-item {
+  margin: 0 0 1.5rem
+}
+iframe.instagram-media,
+object {
+  margin: 3rem auto!important
+}
+.block-alert,
+.block-announcement,
+.block-error,
+.block-help,
+.block-info,
+.block-success {
+  padding: 1.5rem 4.5rem 1.5rem 1.5rem;
+  box-shadow: -.4rem .4rem 0 var(--foreground-color)
+}
+.block-alert:before,
+.block-announcement:before,
+.block-error:before,
+.block-help:before,
+.block-info:before,
+.block-success:before {
+  right: 1.5rem
+}
+.block-border {
+  box-shadow: -.4rem .4rem 0 var(--foreground-color)
+}
+.comment-list,
+.comment-list li.comment #respond {
+  margin: 0 0 3rem
+}
+.comment-list li.comment #respond #cancel-comment-reply-link {
+  float: left
+}
+.comment-list .bypostauthor .avatar {
+  box-shadow: -.4rem .4rem 0 var(--foreground-color)
+}
+.site-footer {
+  padding: 1.5rem 1.5rem 3rem
+}
+.has-header-image .site-header:before {
+  left: 0;
+  right: 0
+}
+.site-header .menu-toggle {
+  text-align: right
+}
+.menu-primary > ul > .current-menu-item {
+  box-shadow: -.4rem .4rem 0 var(--foreground-color)
+}
+@media (min-width:47rem) {
+  .comment-list li.comment .comment-meta .avatar {
+    float: right
+  }
+  .site-header .search-link {
+    left: 1.5rem;
+    right: auto
+  }
+  .header-layout-2 .branding {
+    right: 0;
+    text-align: left
+  }
+  .menu-primary .menu-wrap {
+    margin-right: -1.5rem;
+    margin-left: -1.5rem
+  }
+  .menu-primary .menu-wrap ul {
+    text-align: right
+  }
+  .menu-primary > .menu-wrap > li.menu-item-has-children:after {
+    left: 1rem
+  }
+  .menu-primary > .menu-wrap > li.menu-item-has-children:focus-within > .sub-menu,
+  .menu-primary > .menu-wrap > li.menu-item-has-children:hover > .sub-menu {
+    left: 0
+  }
+  .comment-navigation .nav-links .nav-next,
+  .image-navigation .nav-links .nav-next,
+  .post-navigation .nav-links .nav-next {
+    text-align: left
+  }
+}
+.give-page .give-list-inline li {
+  margin: 0 0 0 1.5rem
+}
+img#wpstats {
+  right: -100px
+}
+div.jetpack-testimonial-shortcode .testimonial-entry-content {
+  margin: 0 0 .75rem
+}
+div.jetpack-testimonial-shortcode .testimonial-featured-image {
+  float: right
+}
+.woocommerce #respond input#submit.alt:focus,
+.woocommerce #respond input#submit.alt:hover,
+.woocommerce #respond input#submit:focus,
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button.alt:focus,
+.woocommerce a.button.alt:hover,
+.woocommerce a.button:focus,
+.woocommerce a.button:hover,
+.woocommerce button.button.alt:focus,
+.woocommerce button.button.alt:hover,
+.woocommerce button.button:focus,
+.woocommerce button.button:hover,
+.woocommerce input.button.alt:focus,
+.woocommerce input.button.alt:hover,
+.woocommerce input.button:focus,
+.woocommerce input.button:hover,
+body #eu-cookie-law.negative input:focus,
+body #eu-cookie-law.negative input:hover,
+body #eu-cookie-law.positive input:focus,
+body #eu-cookie-law.positive input:hover {
+  box-shadow: -.4rem .4rem 0 var(--foreground-color)
+}
+li.woocommerce-cart-button li div.widget_shopping_cart ul {
+  right: auto;
+  left: auto
+}
+li.woocommerce-cart-button li div.widget_shopping_cart p.buttons a {
+  margin: 0 0 .75rem
+}
+li.woocommerce-cart-button li div.widget_shopping_cart .total {
+  padding: .75rem 0 0
+}
+.wp-post-series-box {
+  margin: 0 0 3rem
+}
+.wp-post-series-box .wp-post-series-description p {
+  margin: 0 0 1.5rem
+}

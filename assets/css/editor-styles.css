@@ -1,0 +1,230 @@
+body {
+	color: var(--foreground-color);
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.75;
+	font-weight: normal;
+	font-family: var(--font-body);
+	direction: ltr;
+	-webkit-font-feature-settings: "kern" 1, "liga" 1, "clig" 1;
+	font-feature-settings: "kern" 1, "liga" 1, "clig" 1;
+	-webkit-font-variant-ligatures: no-discretionary-ligatures;
+	font-variant-ligatures: no-discretionary-ligatures;
+	/*@replace: embed*/
+	unicode-bidi: normal;
+}
+
+body .block-info,
+body .block-help,
+body .block-alert,
+body .block-success,
+body .block-error,
+body .block-announcement {
+	background: var(--foreground-color);
+	color: var(--foreground-contrast-color);
+	padding: 1.5rem 1.5rem 1.5rem 4.5rem;
+	position: relative;
+	box-shadow: 0.4rem 0.4rem 0 var(--foreground-color);
+	margin-bottom: 1.5rem;
+}
+
+body .block-info:before,
+body .block-help:before,
+body .block-alert:before,
+body .block-success:before,
+body .block-error:before,
+body .block-announcement:before {
+	font-family: var(--font-monospace);
+	content: '\2139\FE0F';
+	position: absolute;
+	top: 1.5rem;
+	left: 1.5rem;
+	font-size: 1.5rem;
+	line-height: inherit;
+}
+
+body .block-info > *:last-child,
+body .block-help > *:last-child,
+body .block-alert > *:last-child,
+body .block-success > *:last-child,
+body .block-error > *:last-child,
+body .block-announcement > *:last-child {
+	margin-bottom: 0;
+}
+
+body .block-alert:before {
+	content: '\26A0\FE0F';
+}
+
+body .block-success:before {
+	content: '\2705';
+}
+
+body .block-help:before {
+	content: '\2753';
+}
+
+body .block-error:before {
+	content: '\26D4';
+}
+
+body .block-announcement:before {
+	content: '\1F4E3';
+}
+
+body .block-intro {
+	font-size: 26px;
+	font-size: 1.625rem;
+	line-height: 1.5;
+}
+
+body .block-border {
+	padding: 1.5rem 1.5rem;
+	border: 0.2rem solid currentColor;
+	box-shadow: 0.4rem 0.4rem 0 var(--foreground-color);
+}
+
+body .block-border-dashed {
+	padding: 1.5rem 1.5rem;
+	border: 0.2rem dashed currentColor;
+}
+
+/*!
+ * ## - Typography
+ */
+html {
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.75;
+	font-weight: normal;
+	font-family: var(--font-body);
+	direction: ltr;
+	-webkit-font-feature-settings: "kern" 1, "liga" 1, "clig" 1;
+	font-feature-settings: "kern" 1, "liga" 1, "clig" 1;
+	-webkit-font-variant-ligatures: no-discretionary-ligatures;
+	font-variant-ligatures: no-discretionary-ligatures;
+	/*@replace: embed*/
+	unicode-bidi: normal;
+}
+
+body {
+	font-size: 20px;
+	font-size: 1.25rem;
+	line-height: 1.7;
+	font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0 0 1.2rem 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-header);
+	font-weight: normal;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+	text-decoration: none;
+}
+
+h1 a:focus, h1 a:hover,
+h2 a:focus,
+h2 a:hover,
+h3 a:focus,
+h3 a:hover,
+h4 a:focus,
+h4 a:hover,
+h5 a:focus,
+h5 a:hover,
+h6 a:focus,
+h6 a:hover {
+	text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-webkit-font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "swsh" 1;
+	font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "swsh" 1;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 48px;
+	font-size: 3rem;
+	line-height: 1.25;
+}
+
+h2 {
+	font-size: 32px;
+	font-size: 2rem;
+	line-height: 1.25;
+}
+
+h3 {
+	font-size: 26px;
+	font-size: 1.625rem;
+	line-height: 1.5;
+}
+
+h4 {
+	font-size: 20px;
+	font-size: 1.25rem;
+	line-height: 1.7;
+}
+
+h5,
+h6 {
+	font-size: 14px;
+	font-size: 0.875rem;
+	line-height: 1.5;
+	font-weight: bold;
+}
+
+a {
+	color: currentColor;
+	text-underline-offset: 0.1em;
+	text-decoration-thickness: 0.1em;
+	text-decoration: underline;
+}
+
+.device-click a {
+	-webkit-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+}
+
+a:focus, a:hover {
+	text-decoration-thickness: 0.2em;
+	text-decoration: none;
+}
+
+hr {
+	border: none;
+	border-bottom: 0.2rem solid var(--foreground-color);
+	margin: 3rem auto;
+}
+
+h1,
+h2,
+h3 {
+	margin-top: 3rem;
+	clear: both;
+}

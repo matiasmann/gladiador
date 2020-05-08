@@ -1,0 +1,63 @@
+// Responsive media queries.
+// Inspired by the article on creating perfect breakpoints:
+// https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862#.wiu79l3xj
+//
+// I am not using the default breakpoints since the numbers I am choosing stick
+// to WordPress breakpoints.
+
+@mixin for-tablet {
+
+	// Includes the grid gutter on each side.
+	@media ( min-width: #{$grid-small-width + $grid-gutter + $grid-gutter} ) {
+		@content;
+	}
+
+}
+
+@mixin for-big-tablet {
+
+	@media ( min-width: #{$grid-total-width} ) {
+		@content;
+	}
+
+}
+
+@mixin for-desktop {
+
+	@media ( min-width: 1200px ) {
+		@content;
+	}
+
+}
+
+@mixin for-big-desktop {
+
+	@media ( min-width: 1800px ) {
+		@content;
+	}
+
+}
+
+@mixin for-width( $min_width ) {
+
+	@media ( min-width: #{$min_width} ) {
+		@content;
+	}
+
+}
+
+@mixin for-print {
+
+	@media print {
+		@content;
+	}
+
+}
+
+@mixin for-reduced-motion {
+
+	@media (prefers-reduced-motion: reduce) {
+		@content;
+	}
+
+}

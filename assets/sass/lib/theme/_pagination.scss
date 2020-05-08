@@ -1,0 +1,79 @@
+/*!
+ * ## - Pagination
+ */
+// @package Gladiador
+
+.post-navigation {
+
+	a {
+
+		text-decoration: none;
+
+	}
+
+}
+
+.image-navigation,
+.comment-navigation,
+.post-navigation {
+
+	clear: both;
+	margin: ( $grid-line-height * $grid-line-height-multiplier ) 0;
+	font-weight: bold;
+
+	@include for-tablet {
+
+		@include modular-scale(delta);
+
+	}
+
+	.meta-nav {
+
+		@include post-meta-data;
+		display: block;
+		font-weight: normal;
+
+	}
+
+	.post-title {
+
+		text-decoration: underline;
+		display: block;
+
+		&:hover {
+
+			text-decoration: none;
+
+		}
+
+	}
+
+	.nav-links {
+
+		display: grid;
+		grid-gap: $grid-gutter;
+		grid-row-gap: $grid-line-height;
+
+		.nav-parent {
+
+			grid-column: 1/-1;
+			font-weight: bold;
+
+		}
+
+		@include for-tablet {
+
+			grid-template-columns: 1fr 1fr;
+
+			.nav-next {
+
+				text-align: right;
+
+			}
+
+		}
+
+	}
+
+}
+

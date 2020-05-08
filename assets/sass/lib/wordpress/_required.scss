@@ -1,0 +1,118 @@
+
+/*!
+ * ## - Required Elements
+ * Uses the defaults listed on the Codex (https://codex.wordpress.org/CSS)
+ */
+
+.wp-caption {
+
+	background: transparent;
+	padding: 0;
+	text-align: center;
+	max-width: 100%;
+	margin: 0 0 ( $grid-line-height * $grid-line-height-multiplier ) 0;
+	clear: both;
+
+	.wp-caption-text {
+
+		@include modular-scale( zeta );
+		text-align: center;
+		padding: 0;
+		margin: 0;
+
+	}
+
+	img {
+
+		float: none;
+		margin: 0 auto ( $grid-line-height / 4 ) auto;
+
+	}
+
+}
+
+.wp-smiley {
+
+	margin: 0 !important;
+	max-height: 1em;
+	border: none;
+	padding: 0;
+
+}
+
+.alignleft,
+.alignright,
+.aligncenter {
+
+	display: block;
+	margin-bottom: $grid-line-height;
+
+}
+
+blockquote {
+
+	&.alignleft,
+	&.alignright {
+
+		max-width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+
+		@include for-tablet {
+
+			max-width: 45%;
+
+		}
+
+	}
+
+}
+
+/*@noflip*/
+.alignleft {
+
+	float: left;
+	margin-inline-end: $grid-gutter;
+
+}
+
+/*@noflip*/
+.alignright {
+
+	float: right;
+	margin-inline-start: $grid-gutter;
+
+}
+
+/*@noflip*/
+.aligncenter {
+
+	clear: both;
+	display: block;
+	margin: ( $grid-line-height * $grid-line-height-multiplier ) auto;
+
+}
+
+/*@noflip*/
+.alignright .alignright,
+.alignleft .alignleft,
+.aligncenter .aligncenter {
+
+	padding: 0 $style-spacing;
+	border: 0;
+
+}
+
+.sticky {
+
+	.entry-meta {
+
+		.posted-on {
+
+			display: none;
+
+		}
+
+	}
+
+}

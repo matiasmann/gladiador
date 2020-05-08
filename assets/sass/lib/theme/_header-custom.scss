@@ -1,0 +1,134 @@
+/**
+ * Short header.
+ */
+.header-height-0 {
+
+	.site-header {
+
+		padding-bottom: 0;
+
+	}
+
+}
+
+/**
+ * Full height header.
+ */
+.header-height-2 {
+
+	.site-header {
+
+		padding-bottom: $grid-line-height * 2;
+		min-height: 100vh;
+
+	}
+
+}
+
+/**
+ * Center Header.
+ */
+.header-layout-1 {
+
+	.site-header {
+
+		.site-header-content {
+
+			flex-direction: column;
+			align-items: center;
+
+		}
+
+		.custom-logo-link {
+
+			img {
+
+				margin: 0 auto;
+
+			}
+
+		}
+
+		.branding {
+
+			grid-column: 1/-1;
+			text-align: center;
+
+		}
+
+		.menu-primary {
+
+			padding: 0;
+
+			.menu-wrap {
+
+				text-align: center;
+
+			}
+
+		}
+
+	}
+
+}
+
+/**
+ * Fixed Sidebar Header.
+ */
+.header-layout-2 {
+
+	@include for-tablet {
+
+		--wp-alignfull-size: 90vw;
+
+		padding-inline-start: 10%;
+
+		.branding {
+
+			position: fixed;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 10%;
+			padding: ( $grid-line-height * 2 ) ( $grid-gutter / 2 );
+			margin: 0;
+			transform: rotate(180deg);
+			text-align: right;
+			display: flex;
+			justify-content: center;
+			flex-direction: row-reverse;
+			z-index: layer( sidebar_header );
+
+			> * {
+
+				writing-mode: vertical-rl;
+
+			}
+
+		}
+
+		&.admin-bar {
+
+			.branding {
+
+				top: $wp-admin-bar-height;
+
+			}
+
+		}
+
+		.search-link {
+
+			order: 999;
+
+		}
+
+		.menu {
+
+			grid-column: 1/2;
+
+		}
+
+	}
+
+}

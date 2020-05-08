@@ -1,0 +1,353 @@
+@import "../lib/variables/index";
+@import "../lib/mixins/index";
+
+// WordPress.com stats
+img#wpstats {
+
+	position: absolute;
+	left: -100px;
+	bottom: 100px;
+	width: 10px;
+	height: 10px;
+
+}
+
+
+// tile galleries
+.tiled-gallery {
+
+	margin: ( $grid-line-height * $grid-line-height-multiplier ) 0;
+
+}
+
+
+// share post widget
+main {
+
+	div.pd-rating,
+	div.sharedaddy,
+	div#jp-relatedposts,
+	#jp-post-flair {
+
+		clear: both;
+		margin: ( $grid-line-height * $grid-line-height-multiplier ) 0;
+		padding: 0;
+
+	}
+
+}
+
+// Post Box Headings
+// --
+// sharedaddy
+// related posts
+// ratings
+
+// Related posts
+#jp-relatedposts {
+
+	.jp-relatedposts-items {
+
+		display: flex;
+		justify-content: space-between;
+
+		.jp-relatedposts-post {
+
+			width: 31%;
+
+		}
+
+	}
+
+	.jp-relatedposts-post-a {
+
+		display: block;
+
+		img {
+
+			margin: 0 auto ( $grid-line-height / 2 ) auto;
+
+		}
+
+	}
+
+	.jp-relatedposts-post-title {
+
+		@include modular-scale( epsilon );
+		margin:0;
+
+	}
+
+	.jp-relatedposts-post-excerpt {
+
+		display: none;
+
+	}
+
+	.jp-relatedposts-post-context,
+	.jp-relatedposts-post-date {
+
+		@include post-meta-data();
+		margin: 0;
+
+	}
+
+}
+
+
+// testimonial shortcode
+div.jetpack-testimonial-shortcode {
+
+	margin-bottom: $grid-line-height * $grid-line-height-multiplier;
+	@include clear;
+
+	.testimonial-entry {
+
+		margin: 0;
+		padding: $grid-line-height ( $grid-gutter / 2 );
+
+	}
+
+	.testimonial-entry-content {
+
+		margin: 0 0 ($grid-line-height / 2) 0;
+
+	}
+
+	.testimonial-entry-title {
+
+		display: inline-block;
+
+	}
+
+	.testimonial-featured-image {
+
+		float: left;
+
+		img {
+
+			max-height: $grid-line-height;
+			width: auto;
+			margin-inline-end: ( $grid-gutter / 3 );
+
+		}
+
+	}
+
+	&.column-2 {
+
+		.testimonial-entry {
+
+			width: 50%;
+
+			&:nth-of-type( 2n + 1 ) {
+
+				clear: both;
+
+			}
+
+		}
+
+	}
+
+	&.column-3 {
+
+		.testimonial-entry {
+
+			width: 33.3%;
+
+			&:nth-of-type( 3n + 1 ) {
+
+				clear: both;
+
+			}
+
+		}
+
+	}
+
+	&.column-4 {
+
+		.testimonial-entry {
+
+			width: 25%;
+
+			&:nth-of-type( 4n + 1 ) {
+
+				clear: both;
+
+			}
+
+		}
+
+	}
+
+}
+
+
+// grunion contact form
+form.contact-form {
+
+	.grunion-field-wrap {
+
+		margin-bottom: ( $grid-line-height / 2 );
+
+		label {
+
+			&.grunion-radio-label,
+			&.grunion-checkbox-multiple-label {
+
+				font-weight: normal;
+
+				input {
+
+					margin-bottom: 0;
+
+				}
+
+				&:last-of-type {
+
+					margin-bottom: $grid-line-height;
+
+				}
+
+			}
+
+			span {
+
+				color: $black;
+				font-style: italic;
+				padding: 0 ( $grid-gutter / 2 );
+				font-weight: normal;
+
+			}
+
+		}
+
+		&.clear-form {
+
+			display: none;
+
+		}
+
+	}
+
+}
+
+// Cookie Consent.
+body #eu-cookie-law {
+
+	padding: ( $grid-line-height / 2 ) ( $grid-gutter / 2 );
+	@include modular-scale( zeta );
+
+	&.positive,
+	&.negative {
+
+		input {
+
+			@include button( zeta );
+
+		}
+
+	}
+
+}
+
+
+
+/*
+ * Top Posts Widget styles for Jetpack
+ */
+
+/* 2-Column Grid Layout */
+
+.widgets-grid-layout {
+
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+
+	.widget-grid-view-image {
+
+		width: 50%;
+
+	}
+
+}
+
+/* List Layout */
+
+.widgets-list-layout {
+
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+
+	li {
+
+		margin-bottom: $grid-line-height;
+		display: flex;
+
+	}
+
+	// Thumbnail. Who knows what the class name means?
+	.bump-view {
+
+		margin-inline-end: ( $grid-gutter / 2 );
+		width: ( $grid-gutter * 3 );
+
+	}
+
+	.widgets-list-layout-blavatar {
+
+		width: 100%;
+		display: block;
+		height: auto;
+
+	}
+
+	.widgets-list-layout-links {
+
+		flex-grow: 1;
+		width: 50%;
+
+	}
+
+
+	span {
+
+		opacity: 0.5;
+
+		&:hover {
+
+			opacity: 0.8;
+
+		}
+
+	}
+
+}
+
+body {
+
+	// Popular posts thumbnails.
+	.widgets-list-layout img.widgets-list-layout-blavatar {
+
+		max-width: 100%;
+
+	}
+
+}
+
+
+// Jetpack subscription widget.
+.jetpack_subscription_widget {
+
+	#subscribe-email input {
+
+		width: 100%;
+		margin: 0;
+
+	}
+
+}

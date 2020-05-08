@@ -1,0 +1,169 @@
+
+/*!
+ * ## - Typography
+ */
+
+// Typography
+//
+// Styleguide elements.typography
+html {
+
+	@include body;
+
+}
+
+body {
+
+	@include modular-scale( epsilon );
+	font-family: $font-family-body;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+
+	margin: 0 0 ( $grid-line-height * $line-height-margin-multiplier ) 0;
+
+}
+
+// Headings
+//
+// Content headings. Don't use for presentation! Headings are to signify changes in content.
+//
+// Markup:
+// <h1>Heading 1</h1>
+// <h2>Heading 1</h2>
+// <h3>Heading 1</h3>
+// <h4>Heading 1</h4>
+// <h5>Heading 1</h5>
+// <h6>Heading 1</h6>
+//
+// Styleguide elements.typography.headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+	font-family: $font-family-header;
+	font-weight: $font-weight;
+
+	a {
+
+		text-decoration: none;
+
+		&:focus,
+		&:hover {
+
+			text-decoration: underline;
+
+		}
+
+	}
+
+}
+
+h1,
+h2,
+h3 {
+
+	@include wrap-text;
+	font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "swsh" 1;
+	font-weight: bold;
+
+}
+
+h1 {
+
+	@include modular-scale( beta );
+
+}
+
+h2 {
+
+	@include modular-scale( gamma );
+
+}
+
+h3 {
+
+	@include modular-scale( delta );
+
+}
+
+h4 {
+
+	@include modular-scale( epsilon );
+
+}
+
+h5,
+h6 {
+
+	@include modular-scale( zeta );
+	font-weight: bold;
+
+}
+
+// Paragraph
+//
+// Arguably the most important element of a website. In particular websites based on the written word.
+//
+// Markup:
+// <p>Happiness can be found in the darkest of times if only one remembers to turn on the light.</p>
+//
+// Styleguide elements.typography.paragraph
+p {
+
+}
+
+// Link
+//
+// Link to stuff across the web.
+//
+// :hover - highlight the link on hover.
+// :focus - highlight the link on focus.
+//
+// Markup:
+// <a href="#" class="{{modifier_class}}">Harry Potter?</a>
+//
+// Styleguide elements.typography.link
+a {
+
+	color: currentColor;
+	text-underline-offset: 0.1em;
+	text-decoration-thickness: 0.1em;
+	text-decoration: underline;
+	@include transition( all 0.1s ease-in-out );
+
+	&:focus,
+	&:hover {
+
+		text-decoration-thickness: 0.2em;
+		text-decoration: none;
+
+	}
+
+}
+
+// Horizontal rule
+//
+// Use as a separator between blocks of content.
+//
+// Markup:
+// <hr />
+//
+// Styleguide elements.typography.hr
+hr {
+
+	border: none;
+	border-bottom: $border-width solid $black;
+	margin: ( $grid-line-height * $grid-line-height-multiplier ) auto;
+
+}

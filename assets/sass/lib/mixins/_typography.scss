@@ -1,0 +1,38 @@
+
+// scale font size and apply dynamic line height
+@mixin modular-scale( $key, $line-height: null ) {
+
+	$font: map_get( $font-sizes, $key );
+	$size: map_get( $font, size );
+
+	@if ( $line-height == null ) {
+		$line-height: map_get( $font, height );
+	}
+
+	font-size: convert-unit( $size * $font-base, 'px' );
+	font-size: $size / 16 * $font-base ;
+	line-height: $line-height;
+
+}
+
+// generic body properties that sets default properties
+// used in both website styles and editor styles
+@mixin body() {
+
+	@include modular-scale( base );
+	font-weight: $font-weight;
+	font-family: $font-family-body;
+	direction: ltr;
+	font-feature-settings: "kern" 1, "liga" 1, "clig" 1;
+	font-variant-ligatures: no-discretionary-ligatures;
+	/*@replace: embed*/unicode-bidi: normal;
+
+}
+
+// set word wrap properties. Good for elements with large text or that are narrow and likely to have text that overflows
+@mixin wrap-text() {
+
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+
+}

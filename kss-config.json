@@ -1,0 +1,8 @@
+{
+	"title": "Gladiador WordPress Theme Styleguide",
+	"source": "./assets/sass/",
+	"destination": "./docs/",
+	"css": [
+		"../style.css"
+	]
+}

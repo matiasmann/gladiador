@@ -1,0 +1,33 @@
+@import "../lib/variables/index";
+@import "../lib/mixins/index";
+
+body {
+
+	--toolbelt-spacing: #{$grid-line-height};
+
+}
+
+.toolbelt-menu-social {
+
+	margin-bottom: $grid-line-height;
+
+	li {
+
+		margin-inline-end: ( $grid-gutter / 2 );
+
+	}
+
+	.icon {
+
+		width: 1.5rem;
+		height: 1.5rem;
+
+	}
+
+}
+
+.toolbelt-video-wrapper {
+
+	margin: ( $grid-line-height * $grid-line-height-multiplier ) 0;
+
+}

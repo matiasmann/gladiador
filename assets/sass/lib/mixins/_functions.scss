@@ -1,0 +1,72 @@
+// Strip Unit
+//
+// Remove units from a value so we can work with the number. We use this in the convert-unit function below.
+//
+// $value - The number to remove the unit from.
+//
+// Styleguide Functions.strip-unit
+@function strip-unit($value) {
+
+	@if ( type-of( $value ) == 'number' and not unitless( $value ) ) {
+
+		@return $value / ( $value * 0 + 1 );
+
+	}
+
+	@return $value;
+
+}
+
+// Convert Unit
+//
+// Convert a unit from one format to another.
+// We use this in the modular-scale mixin so that we can get a fallback pixel value for our rem units.
+//
+// $value - The value to swap unit on. Including the old unit.
+// $unit - The new unit that you want to swap to.
+//
+// Styleguide Functions.convert-unit
+@function convert-unit($value, $unit) {
+
+	$units: (
+		'px': 0px,
+		'%': 0%,
+		'em': 0em,
+		'rem': 0rem,
+		'vw': 0vw,
+		'vh': 0vh,
+		'vmin': 0vmin,
+		'vmax': 0vmax,
+		'deg': 0deg,
+		'turn': 0turn,
+		'rad': 0rad,
+		'grad': 0grad,
+	);
+
+	@if ( map-has-key( $units, $unit ) ) {
+
+		@return map-get( $units, $unit ) + strip-unit( $value );
+
+	}
+
+	@error "Unknown unit `#{$unit}`.";
+
+}
+
+// Layer
+//
+// Get the z-index of the specified layer. This uses the layers map to allow us to more easily manage the different z-indexes used throughout the theme.
+//
+// $name - the name of the layer we want to get the z-index for.
+//
+// Styleguide Functions.layer
+@function layer($name) {
+
+	@if map-has-key( $layer, $name ) {
+		@return map-get( $layer, $name );
+	}
+
+	@warn "The key #{$name} is not in the map ’$layer’";
+	@return null;
+
+}

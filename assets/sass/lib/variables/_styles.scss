@@ -1,0 +1,18 @@
+
+// outline for focused elements
+$style-outline: thin dotted !default;
+
+// useful for things like adding spacing between an icon and it's heading
+// uses em's so that it scales nicely with font size
+$style-spacing: 0.5em !default;
+
+$style-opacity-element: 0.8 !default;
+
+$style-list-style-type: square !default;
+
+// border width for elements that aren't 1px
+$border-width: 0.2rem !default;
+
+// Stylised box shadow that's used as a motif across the design.
+$border-shadow: ( $border-width * 2 ) ( $border-width * 2 ) 0 $black;
+$border-shadow-small: ( $border-width ) ( $border-width ) 0 $black;

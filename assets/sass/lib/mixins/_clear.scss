@@ -1,0 +1,14 @@
+// Clearfix
+//
+// Clear an element so that floated elements don't overflow the content.
+//
+// Styleguide Mixins.clear
+@mixin clear() {
+
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+
+}

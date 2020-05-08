@@ -1,0 +1,28 @@
+/*!
+ * ## - Footer
+ */
+// @package Gladiador
+
+.site-footer {
+
+	padding: ( $grid-line-height ) ( $grid-gutter ) ( $grid-line-height * 2 ) ( $grid-gutter );
+
+	.sep {
+
+		margin: 0 $style-spacing;
+
+	}
+
+	.site-info {
+
+		overflow: hidden;
+
+	}
+
+	a {
+
+		font-weight: bold;
+
+	}
+
+}

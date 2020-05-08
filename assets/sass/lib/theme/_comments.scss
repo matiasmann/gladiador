@@ -1,0 +1,259 @@
+/*!
+ * ## - Comments
+ * Site content, blog posts etc
+ */
+// @package Gladiador
+
+.comment-list {
+
+	list-style-type: none;
+	margin: 0 0 ( $grid-line-height * $grid-line-height-multiplier ) 0;
+	padding: 0;
+
+	li.comment,
+	li.trackback,
+	li.pingback {
+
+		.comment-body {
+
+			width: 100%;
+			clear: both;
+			margin-bottom: $grid-line-height * $grid-line-height-multiplier;
+
+			p:last-child {
+
+				margin-bottom: $grid-line-height / 2;
+
+			}
+
+		}
+
+	}
+
+	li.comment {
+
+		margin: 0;
+		position: relative;
+		list-style-type: none;
+
+		#respond {
+
+			position: relative;
+			margin: 0 0 ( $grid-line-height * $grid-line-height-multiplier ) 0;
+
+			#cancel-comment-reply-link {
+
+				@include post-meta-data;
+				float: right;
+
+			}
+
+		}
+
+		// comment info
+		.comment-meta {
+
+			@include clear;
+			margin-bottom: ( $grid-line-height / 2 );
+
+			.avatar {
+
+				display: none;
+
+				@include for-tablet {
+
+					float: left;
+					margin-inline-end: $grid-gutter;
+					display: block;
+					height: $grid-line-height * 2.5;
+					width: auto;
+
+				}
+
+			}
+
+			// comment date and edit link
+			.comment-metadata {
+
+				@include post-meta-data;
+
+				> * {
+
+					margin-inline-end: ( $grid-gutter / 2 );
+
+				}
+
+			}
+
+			// author link
+			.fn {
+
+				display: inline-block;
+				font-weight: bold;
+				margin-top: ( $grid-line-height / 6 );
+
+			}
+
+			.says {
+
+				display: none;
+
+			}
+
+		}
+
+		// set indents for nested comments
+		@for $i from 1 through 10 {
+
+			$comments-padding: $comments-margin * ( $i - 1 );
+
+			&.depth-#{$i} .comment-body {
+
+				padding-inline-start: $comments-padding;
+				max-width: calc( #{$grid-small-width} + #{$comments-padding} );
+
+			}
+
+		}
+
+	}
+
+	.bypostauthor {
+
+		.avatar {
+
+			box-shadow: $border-shadow;
+
+		}
+
+	}
+
+	// edit comment/ pingback/ trackback
+	.reply,
+	.edit-link {
+
+		@include post-meta-data;
+
+	}
+
+	.children {
+
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		clear: both;
+		position: relative;
+
+		li:last-child {
+
+			margin: 0;
+
+		}
+
+	}
+
+}
+
+#respond {
+
+	clear: both;
+	margin-bottom: $grid-line-height * $grid-line-height-multiplier;
+
+	p {
+
+		position: relative;
+
+	}
+
+	p.comment-form-author,
+	p.comment-form-email,
+	p.comment-form-comment,
+	p.comment-form-url {
+
+		input,
+		textarea {
+
+			width: 100%;
+
+		}
+
+	}
+
+	p.comment-form-author,
+	p.comment-form-email,
+	p.comment-form-url {
+
+		max-width: $grid-small-width;
+
+	}
+
+	p.form-submit {
+
+		margin-top: ( $grid-line-height / 2 );
+		margin-bottom: ( $grid-line-height / 2 );
+
+	}
+
+	p.logged-in-as {
+
+		@include post-meta-data;
+
+	}
+
+	p.comment-form-cookies-consent,
+	p.post-subscription-form,
+	p.comment-subscription-form {
+
+		label {
+
+			display: inline;
+
+		}
+
+	}
+
+	p.comment-notes,
+	p.logged-in-as {
+
+		margin-bottom: $grid-line-height;
+
+	}
+
+	// Displayed under the "Leave a Reply" title for logged out users.
+	p.comment-notes {
+
+		#email-notes {
+
+			display: block;
+
+		}
+
+		.required {
+
+			font-weight: bold;
+
+		}
+
+	}
+
+}
+
+.content-comments {
+
+	padding: ( $grid-line-height * $grid-line-height-multiplier ) 0;
+
+	@include for-desktop {
+
+		padding: ( $grid-line-height * 5 ) 0;
+
+	}
+
+	.no-comments {
+
+		background: $black;
+		color: $white;
+		padding: $grid-line-height ( $grid-gutter );
+
+	}
+
+}

@@ -1,0 +1,18 @@
+// @package Gladiador
+
+@import "lib/variables/index";
+@import "lib/mixins/index";
+
+body {
+
+	color: var( --foreground-color );
+
+	@include body();
+
+	@import "lib/theme/_alt-blocks";
+
+}
+
+@import "lib/elements/_typography";
+@include the-content();
+

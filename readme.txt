@@ -1,0 +1,63 @@
+=== Gladiador ===
+
+Contributors: matiasmann
+Requires at least: 5.0
+Tested up to: 5.2
+Requires PHP: 7.2
+License: GPL-2.0-or-later
+License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
+Tags: One Column, e-commerce, Black, Brown, Gray, Green, Orange, Pink, Purple, Red, Silver, Tan, White, Yellow, Dark, Light, Fixed Layout, Fluid Layout, Responsive Layout, One Column, Two Columns, Three Columns, Four Columns, Left Sidebar, Right Sidebar, Accessibility Ready, Blavatar, BuddyPress, Custom Background, Custom Colors, Custom Header, Custom Menu, Editor Style, Featured Image Header, Featured Images, Flexible Header, Front Page Posting, Full Width Template, Microformats, Post Formats, RTL Language Support, Sticky Post, Theme Options, Threaded Comments, Translation Ready, Holiday, Photoblogging, Seasonal
+
+A super fast WordPress theme designed for Gutenberg and WooCommerce.
+
+== Description ==
+
+Gladiador is designed with speed, accessibility, and privacy in mind. By keeping everything as simple as possible, and using a minimal design Gladiador is a speedy theme that uses modern web development practices.
+
+[Complete documentation is available on Github](https://github.com/matiasmann/gladiador/wiki).
+
+== Installation ==
+
+1. Upload the theme
+2. Activate the theme
+
+[More info on Getting Started with Gladiador](https://github.com/matiasmann/gladiador/wiki/Getting-Started).
+
+== Page Templates ==
+
+Gladiador comes bundled with a number of page templates. These can be used as follows:
+
+* __Content Only__ - A template that removes the site header and footer and displays just the page content. This is a nice way to create totally custom layouts using the new editor. Ideal for landing pages, or store pages where the focus should be the page content.
+* __Contributors__ - A list of all the people (users) who have contributed content (published at least one post) to your website, their most recent posts, and a link to their user archive.
+* __Child Page Grid__ - Lists all of the pages that are children of the current page. Handy if you have a complex site hierachy.
+* __Portfolio__ - Displays your most recent portfolio posts. Requires the [Toolbelt plugin](https://wordpress.org/plugins/wp-toolbelt/). Allows you to add portfolio posts to your website homepage.
+* __Full-Width__ - Stretch the content across the entire available space. This is best for pages using a page builder or more advanced Gutenberg blocks.
+
+== Footer Credits ==
+
+Gladiador allows you to edit or hide the footer credits. If you want to add your own then Gladiador includes some handy shortcuts to make it easier to manage.
+
+* *(c)* - add a copyright symbol __@copy;__
+* *(year)* - add the current year. This will update when the year changes, so no more forgetting to change things in the new year!
+* *(|)* - add a gap between bits of footer content.
+* *(privacy)* - add a link to your privacy policy as setup in the privacy section of your WordPress admin.
+* *(top)* - add a link that scrolls the user to the top of the page.
+
+== Frequently Asked Questions ==
+
+= Does this theme support any plugins? =
+
+Gladiador includes support for:
+
+* [Toolbelt](https://wordpress.org/plugins/wp-toolbelt/) - a privacy and speed focused website helper.
+* [Styleguide](https://wordpress.org/plugins/styleguide/) - a plugin that allows you to change fonts, and colours in WordPress themes.
+
+== Changelog ==
+
+= 1.0 =
+* Initial release
+
+== Credits ==
+* Based on Jarvis https://github.com/BinaryMoon/jarvis, (C) 2016-2020 Binary Moon, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* Based on Granule https://github.com/BinaryMoon/granule, (C) 2016-2020 Binary Moon, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+

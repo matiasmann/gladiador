@@ -1,0 +1,20 @@
+language: php
+
+php:
+  - "7.2"
+  - "7.3"
+
+install:
+  - |
+    composer require --dev jakub-onderka/php-parallel-lint wp-coding-standards/wpcs dealerdirect/phpcodesniffer-composer-installer phpstan/phpstan-shim szepeviktor/phpstan-wordpress
+    sed -e 's#^function is_countable(#// &#' -i vendor/giacocorsiglia/wordpress-stubs/wordpress-stubs.php
+
+script:
+  - vendor/bin/parallel-lint *.php inc/
+  - vendor/bin/phpcs -n -s *.php inc/
+  - vendor/bin/phpstan analyze -l 7
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change

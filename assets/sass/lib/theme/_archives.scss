@@ -1,0 +1,101 @@
+/*!
+ * ## - Archives and Excerpts.
+ * Site content, blog posts etc
+ */
+// @package Gladiador
+
+.content-posts {
+
+	article.entry {
+
+		margin-bottom: $grid-line-height * 3;
+
+		.read-more {
+
+			// Add some padding for a larger clickable area.
+			// Still an inline element so takes up the same amount of space.
+			padding: ( $grid-line-height / 2 ) 0;
+
+		}
+
+		// post formats
+
+		&.format-standard {
+
+		}
+
+		&.format-quote {
+
+			blockquote {
+
+				margin: 0;
+				padding: 0;
+				grid-column: 2 / -1;
+
+			}
+
+		}
+
+		&.format-audio {
+
+			.wp-playlist,
+			.mejs-container {
+
+				margin: 0;
+
+			}
+
+		}
+
+		&.format-video {
+
+			.toolbelt-video-wrapper {
+
+				margin-top: 0;
+				margin-bottom: $grid-line-height / 2;
+
+			}
+
+		}
+
+		&.format-image {
+
+		}
+
+		&.format-gallery {
+
+			.post-gallery,
+			.tiled-gallery {
+
+				margin-bottom: $grid-line-height / 2;
+
+			}
+
+		}
+
+	}
+
+	.not-found {
+
+		grid-column: 1/-1;
+
+	}
+
+	.entry-thumbnail {
+
+		margin-bottom: $grid-line-height;
+		display: block;
+
+	}
+
+	.entry-archive-header {
+
+		> * + * {
+
+			margin-top: $grid-line-height;
+
+		}
+
+	}
+
+}

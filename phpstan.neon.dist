@@ -1,0 +1,49 @@
+includes:
+    - phar://phpstan.phar/conf/bleedingEdge.neon
+    - vendor/szepeviktor/phpstan-wordpress/extension.neon
+parameters:
+    level: max
+    paths:
+        - %currentWorkingDirectory%/inc/
+    autoload_files:
+        # Plugin stubs
+        - %currentWorkingDirectory%/tests/tgmpa-stubs.php
+        - %currentWorkingDirectory%/tests/wp-cli-stubs.php
+        - %currentWorkingDirectory%/tests/wp-toolbelt-stubs.php
+        - %currentWorkingDirectory%/tests/woocommerce-stubs-3.7.0.php
+        # Includes
+        - %currentWorkingDirectory%/inc/compat.php
+        - %currentWorkingDirectory%/inc/custom-header.php
+        - %currentWorkingDirectory%/inc/featured-images.php
+        - %currentWorkingDirectory%/inc/styles.php
+        - %currentWorkingDirectory%/inc/template-tags.php
+        - %currentWorkingDirectory%/inc/wordpress-html-classes.php
+        - %currentWorkingDirectory%/inc/wordpress.php
+        # Customizer
+        - %currentWorkingDirectory%/inc/customizer/archive.php
+        - %currentWorkingDirectory%/inc/customizer/class-gladiador-doc-link.php
+        - %currentWorkingDirectory%/inc/customizer/class-gladiador-font-selector.php
+        - %currentWorkingDirectory%/inc/customizer/colours.php
+        - %currentWorkingDirectory%/inc/customizer/customizer-sanitization.php
+        - %currentWorkingDirectory%/inc/customizer/fonts.php
+        - %currentWorkingDirectory%/inc/customizer/footer.php
+        - %currentWorkingDirectory%/inc/customizer/settings.php
+        - %currentWorkingDirectory%/inc/customizer/single.php
+        - %currentWorkingDirectory%/inc/customizer/site-header.php
+        # Plugins
+        - %currentWorkingDirectory%/inc/plugins/akismet.php
+        - %currentWorkingDirectory%/inc/plugins/editorskit.php
+        - %currentWorkingDirectory%/inc/plugins/give.php
+        - %currentWorkingDirectory%/inc/plugins/jetpack.php
+        - %currentWorkingDirectory%/inc/plugins/woocommerce.php
+        - %currentWorkingDirectory%/inc/plugins/wp-post-series.php
+        - %currentWorkingDirectory%/inc/plugins/wp-toolbelt.php
+    excludes_analyse:
+        # Third Party Libraries
+        - %currentWorkingDirectory%/inc/lib/class-tgm-plugin-activation.php
+    ignoreErrors:
+        # Uses func_get_args()
+        #- '#^Function apply_filters invoked with [34567] parameters, 2 required\.$#'
+        - '#^Function add_theme_support invoked with 2 parameters, 1 required\.$#'
+        # TODO Add tests/bootstrap.php with function jetpack_breadcrumbs() {}
+        - '#^Function jetpack_breadcrumbs not found\.$#'

@@ -1,0 +1,131 @@
+/*!
+ * ## - Body
+ * Site content, blog posts etc
+ */
+// @package Gladiador
+
+/* single post and page */
+.content-single {
+
+	.entry-single {
+
+		max-width: $grid-small-width;
+
+		.page-template-full-width & {
+
+			max-width: inherit;
+
+		}
+
+		> h1,
+		> h2,
+		> h3 {
+
+			margin-top: ( $grid-line-height * 2 );
+			clear: both;
+
+		}
+
+		.alignwide {
+
+			// If the page is narrower than the container then use 100vw (the
+			// available space) - the gutter.
+			width: calc( var( --wp-alignfull-size ) - #{$grid-gutter * 2} );
+
+			// If the page is wider than the container then use the width of the
+			// container minus the gutter.
+			@include for-big-tablet {
+
+				width: ( $grid-total-width - ( $grid-gutter * 2 ) );
+
+			}
+
+		}
+
+		.alignfull {
+
+			margin-inline-start: -$grid-gutter;
+			width: var( --wp-alignfull-size );
+			// We need this since otherwise the max-width is 100%.
+			max-width: 100vw;
+
+			@include for-big-tablet {
+
+				margin-inline-start: calc( ( var( --wp-alignfull-size ) - #{$grid-total-width - $grid-gutter - $grid-gutter} ) / -2 );
+
+			}
+
+		}
+
+	}
+
+	.alignleft {
+
+		transform: translateX( -$grid-gutter );
+
+	}
+
+}
+
+// attachment page
+.attachment {
+
+	.attachment-image {
+
+		text-align: center;
+		margin-bottom: $grid-line-height * $grid-line-height-multiplier;
+
+	}
+
+	.attachment-description {
+
+		margin-bottom: $grid-line-height * $grid-line-height-multiplier;
+
+	}
+
+	.attachment-caption {
+
+		font-style: italic;
+
+	}
+
+}
+
+
+/* child pages (on child page template) */
+.child-page {
+
+	margin-bottom: $grid-line-height * $grid-line-height-multiplier;
+
+	h2 {
+
+		@include modular-scale( epsilon );
+
+	}
+
+	&:nth-child( 2n + 2 ) {
+
+		padding-inline-end: 0;
+
+	}
+
+	&:nth-child( 2n + 1 ) {
+
+		clear: both;
+		padding-inline-start: 0;
+
+	}
+
+}
+
+.page-404 {
+
+	max-width: $grid-small-width;
+
+}
+
+.entry-children {
+
+	margin-top: $grid-line-height * 3;
+
+}

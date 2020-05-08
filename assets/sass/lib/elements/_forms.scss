@@ -1,0 +1,282 @@
+
+/*!
+ * ## - Forms
+ */
+
+// Forms
+//
+// Consistent controls for forms.
+//
+// Styleguide elements.forms
+
+// Radio and Checkbox inputs
+//
+// Form controls for Radio and Checkboxes.
+//
+// Markup:
+// <input type="radio" class="{{modifier_class}}" />
+// <input type="checkbox" class="{{modifier_class}}" />
+//
+// Styleguide elements.forms.radio-checkbox
+input {
+
+	&[type=checkbox],
+	&[type=radio] {
+
+		cursor: pointer;
+		margin-inline-end: $style-spacing;
+		vertical-align: middle;
+
+		&:hover,
+		&:focus {
+
+			background: $white;
+			color: $black;
+
+		}
+
+	}
+
+}
+
+@supports(-webkit-appearance: none) {
+
+	// Shared custom styles.
+	input {
+
+		&[type=checkbox],
+		&[type=radio] {
+
+			-webkit-appearance: none !important;
+			width: $grid-gutter !important;
+			height: $grid-gutter !important;
+			border: $border-width solid $black;
+
+			&:hover,
+			&:focus {
+
+				border: $border-width solid $black;
+
+			}
+
+			&:checked {
+
+				position: relative;
+				background: $black;
+
+			}
+
+			&:checked::after {
+
+				position: absolute;
+				content: "";
+
+			}
+
+		}
+
+	}
+
+	// Checkbox.
+	input[type="checkbox"] {
+
+		background: none;
+
+		&:checked::after {
+
+			top: 0.2rem;
+			left: 0.1rem;
+			width: 0.9rem;
+			height: 0.5rem;
+			border: 0.25rem solid $white;
+			border-inline-end: none;
+			border-top: none;
+			transform: rotate(-45deg);
+
+		}
+
+	}
+
+	// Radio input.
+	input[type="radio"] {
+
+		border-radius: $grid-gutter;
+		padding: 0;
+
+		&:checked::after {
+
+			top: 0.175rem;
+			left: 0.175rem;
+			width: 0.75rem;
+			height: 0.75rem;
+			background: $white;
+			border-radius: $grid-gutter;
+
+		}
+
+	}
+
+}
+
+// Text input
+//
+// Various types of text input.
+//
+// :hover - Highlight text field on hover.
+// :focus - Highlight text field on focus.
+//
+// Markup:
+// <input class="{{modifier_class}}" type="text" />
+//
+// Styleguide elements.forms.text-input
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=search],
+input[type=date],
+input[type=time],
+input[type=datetime-local],
+input[type=week],
+input[type=month],
+input[type=tel],
+input[type=number],
+select,
+textarea {
+
+	padding: ( $grid-line-height / 2 ) ( $grid-gutter / 2 );
+	line-height: $grid-line-height;
+	min-height: $grid-line-height;
+	width: 100%;
+	background-color: transparent;
+	border: $border-width solid currentColor;
+	color: inherit;
+	@include transition;
+
+	&:hover {
+
+		border-color: $black;
+
+	}
+
+	&:focus {
+
+		outline: none;
+		background-color: $white;
+		color: $black;
+		box-shadow: $border-shadow;
+		z-index: 1;
+		position: relative;
+
+	}
+
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	color: $black;
+	opacity: 0.4;
+}
+::-moz-placeholder { /* Firefox 19+ */
+	color: $black;
+	opacity: 0.4;
+}
+:-ms-input-placeholder { /* IE 10+ */
+	color: $black;
+	opacity: 0.4;
+}
+:-moz-placeholder { /* Firefox 18- */
+	color: $black;
+	opacity: 0.4;
+}
+
+// Select box
+//
+// Select box dropdowns.
+//
+// :focus - Highlight the selectbox on focus.
+//
+// Markup:
+// <select class="{{modifier_class}}"><option value="0">WordPress</option><option value="1">wordpress</option><option value="2">WP</option></select>
+//
+// Styleguide: elements.forms.select
+select {
+
+	height: calc( #{$grid-line-height * 2} + #{$border-width * 2} );
+
+	&:hover {
+
+		cursor: pointer;
+
+	}
+
+}
+
+// Textarea
+//
+// Text input for large amounts of text. By default it's used in comment forms,
+// but also used with plugins in contact forms and other.
+//
+// :focus - Highlight textareas on focus.
+//
+// Markup:
+// <textarea class="{{modifier_class}}"></textarea>
+//
+// Styleguide elements.forms.textarea
+textarea {
+
+	min-height: ( $grid-line-height * 10 );
+
+}
+
+// Label
+//
+// Element to label form elements.
+//
+// Markup:
+// <label class="{{modifier_class}}">Example Label</label>
+//
+// Styleguide elements.forms.label
+label {
+
+	display: block;
+	font-weight: bold;
+
+	em {
+
+		opacity: $style-opacity-element;
+
+	}
+
+	&:hover {
+
+		cursor:pointer;
+
+	}
+
+}
+
+// Fieldset & Legend
+//
+// Fieldsets and Legends should be used to group form controls. They are not
+// used in WordPress by default, but I have styled them so they can be used by
+// form plugins.
+//
+// Markup:
+// <fieldset><legend>Gryffindor</legend></fieldset>
+//
+// Styleguide components.fieldset-legend
+legend {
+
+	@include post-meta-data;
+	font-family: $font-family-header;
+	padding: 0 ( $grid-gutter / 2 );
+
+}
+
+fieldset {
+
+	border: $border-width solid $black;
+	padding: $grid-line-height ( $grid-gutter );
+	margin: ( $grid-line-height * 2 ) 0;
+
+}
