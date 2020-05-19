@@ -75,8 +75,8 @@ html.customizer-preview {
 }
 
 body {
-	background-color: var(--background-color);
-	color: var(--foreground-color);
+	background-color: var(--background-color, #fff);
+	color: var(--foreground-color, #000);
 	margin: 0;
 	min-height: 100vh;
 	text-rendering: optimizeSpeed;
@@ -162,7 +162,7 @@ samp {
 }
 
 q {
-	background: rgba(var(--foreground-color), 0.25);
+	background: rgba(var(--foreground-color, #000), 0.25);
 	padding: 0.25em 0.5em;
 }
 
@@ -387,8 +387,8 @@ table {
 }
 
 table th {
-	color: var(--foreground-color);
-	border-bottom: 0.2rem solid var(--foreground-color);
+	color: var(--foreground-color, #000);
+	border-bottom: 0.2rem solid var(--foreground-color, #000);
 }
 
 table th,
@@ -401,13 +401,13 @@ table caption {
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
 	padding: 0.75rem 1.5rem;
-	text-align: left;
+	text-align: start;
 	font-weight: bold;
 }
 
 table td {
 	padding: 0.75rem 1.5rem;
-	border-bottom: 1px solid var(--foreground-color);
+	border-bottom: 1px solid var(--foreground-color, #000);
 	vertical-align: top;
 }
 
@@ -416,12 +416,12 @@ table tr:last-child td {
 }
 
 table tbody tr:hover {
-	background: var(--foreground-contrast-color);
+	background: var(--foreground-contrast-color, #fff);
 }
 
 pre {
-	background: var(--foreground-color);
-	color: var(--foreground-contrast-color);
+	background: var(--foreground-color, #000);
+	color: var(--foreground-contrast-color, #fff);
 	padding: 1.5rem 1.5rem;
 	margin: 3rem 0;
 	overflow: auto;
@@ -508,10 +508,10 @@ pre.compress {
 }
 
 .entry-meta a.current-page {
-	background: var(--foreground-color);
-	color: var(--foreground-contrast-color);
+	background: var(--foreground-color, #000);
+	color: var(--foreground-contrast-color, #fff);
 	padding: 0.3em 0.6em;
-	box-shadow: 0.2rem 0.2rem 0 var(--foreground-color);
+	box-shadow: 0.2rem 0.2rem 0 var(--foreground-color, #000);
 }
 
 .entry-intro {
@@ -543,7 +543,7 @@ pre.compress {
 
 .entry-author .avatar {
 	max-width: 100%;
-	box-shadow: 0.4rem 0.4rem 0 var(--foreground-color);
+	box-shadow: 0.4rem 0.4rem 0 var(--foreground-color, #000);
 }
 
 .entry-breadcrumbs {
@@ -565,8 +565,8 @@ button {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	background: var(--foreground-color);
-	color: var(--foreground-contrast-color);
+	background: var(--foreground-color, #000);
+	color: var(--foreground-contrast-color, #fff);
 	display: inline-block;
 	text-decoration: none;
 	border: none;
@@ -602,13 +602,15 @@ input[type=submit]:hover,
 button:focus,
 button:hover {
 	text-decoration: underline;
-	box-shadow: 0.4rem 0.4rem 0 var(--foreground-color);
+	box-shadow: 0.4rem 0.4rem 0 var(--foreground-color, #000);
 }
 
 /*!
  * 1.2 - Forms
  */
 input[type=checkbox], input[type=radio] {
+	padding: 0;
+	margin: 0;
 	cursor: pointer;
 	-webkit-margin-end: 0.5em;
 	margin-inline-end: 0.5em;
@@ -616,8 +618,8 @@ input[type=checkbox], input[type=radio] {
 }
 
 input[type=checkbox]:hover, input[type=checkbox]:focus, input[type=radio]:hover, input[type=radio]:focus {
-	background: var(--foreground-contrast-color);
-	color: var(--foreground-color);
+	background: var(--foreground-contrast-color, #fff);
+	color: var(--foreground-color, #000);
 }
 
 @supports (-webkit-appearance: none) {
@@ -625,14 +627,14 @@ input[type=checkbox]:hover, input[type=checkbox]:focus, input[type=radio]:hover,
 		-webkit-appearance: none !important;
 		width: 1.5rem !important;
 		height: 1.5rem !important;
-		border: 0.2rem solid var(--foreground-color);
+		border: 0.2rem solid var(--foreground-color, #000);
 	}
 	input[type=checkbox]:hover, input[type=checkbox]:focus, input[type=radio]:hover, input[type=radio]:focus {
-		border: 0.2rem solid var(--foreground-color);
+		border: 0.2rem solid var(--foreground-color, #000);
 	}
 	input[type=checkbox]:checked, input[type=radio]:checked {
 		position: relative;
-		background: var(--foreground-color);
+		background: var(--foreground-color, #000);
 	}
 	input[type=checkbox]:checked::after, input[type=radio]:checked::after {
 		position: absolute;
@@ -646,7 +648,7 @@ input[type=checkbox]:hover, input[type=checkbox]:focus, input[type=radio]:hover,
 		left: 0.1rem;
 		width: 0.9rem;
 		height: 0.5rem;
-		border: 0.25rem solid var(--foreground-contrast-color);
+		border: 0.25rem solid var(--foreground-contrast-color, #fff);
 		-webkit-border-end: none;
 		border-inline-end: none;
 		border-top: none;
@@ -658,11 +660,13 @@ input[type=checkbox]:hover, input[type=checkbox]:focus, input[type=radio]:hover,
 		padding: 0;
 	}
 	input[type="radio"]:checked::after {
-		top: 0.175rem;
-		left: 0.175rem;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-0.375rem, -0.375rem);
+		transform: translate(-0.375rem, -0.375rem);
 		width: 0.75rem;
 		height: 0.75rem;
-		background: var(--foreground-contrast-color);
+		background: var(--foreground-contrast-color, #fff);
 		border-radius: 1.5rem;
 	}
 }
@@ -722,7 +726,7 @@ input[type=tel]:hover,
 input[type=number]:hover,
 select:hover,
 textarea:hover {
-	border-color: var(--foreground-color);
+	border-color: var(--foreground-color, #000);
 }
 
 input[type=text]:focus,
@@ -740,34 +744,34 @@ input[type=number]:focus,
 select:focus,
 textarea:focus {
 	outline: none;
-	background-color: var(--foreground-contrast-color);
-	color: var(--foreground-color);
-	box-shadow: 0.4rem 0.4rem 0 var(--foreground-color);
+	background-color: var(--foreground-contrast-color, #fff);
+	color: var(--foreground-color, #000);
+	box-shadow: 0.4rem 0.4rem 0 var(--foreground-color, #000);
 	z-index: 1;
 	position: relative;
 }
 
 ::-webkit-input-placeholder {
 	/* Chrome/Opera/Safari */
-	color: var(--foreground-color);
+	color: var(--foreground-color, #000);
 	opacity: 0.4;
 }
 
 ::-moz-placeholder {
 	/* Firefox 19+ */
-	color: var(--foreground-color);
+	color: var(--foreground-color, #000);
 	opacity: 0.4;
 }
 
 :-ms-input-placeholder {
 	/* IE 10+ */
-	color: var(--foreground-color);
+	color: var(--foreground-color, #000);
 	opacity: 0.4;
 }
 
 :-moz-placeholder {
 	/* Firefox 18- */
-	color: var(--foreground-color);
+	color: var(--foreground-color, #000);
 	opacity: 0.4;
 }
 
@@ -783,35 +787,26 @@ textarea {
 	min-height: 15rem;
 }
 
-label {
+label, legend {
 	display: block;
 	font-weight: bold;
 }
 
-label em {
+label em, legend em {
 	opacity: 0.8;
 }
 
-label:hover {
+label:hover, legend:hover {
 	cursor: pointer;
 }
 
-legend {
-	font-size: 14px;
-	font-size: 0.875rem;
-	line-height: 1.5;
-	font-family: var(--font-meta);
-	font-weight: bold;
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
-	font-family: var(--font-header);
-	padding: 0 0.75rem;
-}
-
 fieldset {
-	border: 0.2rem solid var(--foreground-color);
+	border: 0.2rem solid var(--foreground-color, #000);
+	border: none;
 	padding: 1.5rem 1.5rem;
+	padding: 0;
 	margin: 3rem 0;
+	margin-bottom: 1.5rem;
 }
 
 /*!
@@ -943,7 +938,7 @@ a:focus, a:hover {
 
 hr {
 	border: none;
-	border-bottom: 0.2rem solid var(--foreground-color);
+	border-bottom: 0.2rem solid var(--foreground-color, #000);
 	margin: 3rem auto;
 }
 
@@ -1115,8 +1110,8 @@ blockquote.alignleft, blockquote.alignright {
 }
 
 .widget a[aria-current] {
-	background: var(--foreground-color);
-	color: var(--foreground-contrast-color);
+	background: var(--foreground-color, #000);
+	color: var(--foreground-contrast-color, #fff);
 	padding: 0.2rem;
 	margin-left: -0.2rem;
 	margin-right: -0.2rem;
@@ -1157,7 +1152,7 @@ p.wp-block-subhead {
 	margin-right: auto;
 	max-width: 100%;
 	border-bottom-width: 0.2rem;
-	border-color: var(--foreground-color);
+	border-color: var(--foreground-color, #000);
 }
 
 .wp-block-separator.is-style-wide {
@@ -1171,7 +1166,7 @@ p.wp-block-subhead {
 	-webkit-padding-start: 1em;
 	padding-inline-start: 1em;
 	line-height: 0;
-	color: var(--foreground-color);
+	color: var(--foreground-color, #000);
 }
 
 .wp-block-audio audio {
@@ -1480,11 +1475,11 @@ p > object:only-child {
 .block-success,
 .block-error,
 .block-announcement {
-	background: var(--foreground-color);
-	color: var(--foreground-contrast-color);
+	background: var(--foreground-color, #000);
+	color: var(--foreground-contrast-color, #fff);
 	padding: 1.5rem 1.5rem 1.5rem 4.5rem;
 	position: relative;
-	box-shadow: 0.4rem 0.4rem 0 var(--foreground-color);
+	box-shadow: 0.4rem 0.4rem 0 var(--foreground-color, #000);
 	margin-bottom: 1.5rem;
 }
 
@@ -1541,7 +1536,7 @@ p > object:only-child {
 .block-border {
 	padding: 1.5rem 1.5rem;
 	border: 0.2rem solid currentColor;
-	box-shadow: 0.4rem 0.4rem 0 var(--foreground-color);
+	box-shadow: 0.4rem 0.4rem 0 var(--foreground-color, #000);
 }
 
 .block-border-dashed {
@@ -1843,7 +1838,7 @@ p > object:only-child {
 }
 
 .comment-list .bypostauthor .avatar {
-	box-shadow: 0.4rem 0.4rem 0 var(--foreground-color);
+	box-shadow: 0.4rem 0.4rem 0 var(--foreground-color, #000);
 }
 
 .comment-list .reply,
@@ -1940,8 +1935,8 @@ p > object:only-child {
 }
 
 .content-comments .no-comments {
-	background: var(--foreground-color);
-	color: var(--foreground-contrast-color);
+	background: var(--foreground-color, #000);
+	color: var(--foreground-contrast-color, #fff);
 	padding: 1.5rem 1.5rem;
 }
 
@@ -2065,8 +2060,8 @@ p > object:only-child {
 	-webkit-box-align: center;
 	align-items: center;
 	padding: 1.5rem 3rem;
-	background: var(--foreground-color);
-	color: var(--foreground-contrast-color);
+	background: var(--foreground-color, #000);
+	color: var(--foreground-contrast-color, #fff);
 }
 
 .site-header .search-link .icon {
@@ -2080,7 +2075,7 @@ p > object:only-child {
 	.site-header .search-link {
 		-webkit-box-pack: center;
 		justify-content: center;
-		color: var(--foreground-color);
+		color: var(--foreground-color, #000);
 		width: 3rem;
 		height: 3rem;
 		margin: 0;
@@ -2100,7 +2095,7 @@ p > object:only-child {
 }
 
 .site-header .menu-toggle {
-	text-align: left;
+	text-align: start;
 	display: block;
 	width: 100%;
 }
@@ -2173,7 +2168,7 @@ p > object:only-child {
 		margin: 0;
 		-webkit-transform: rotate(180deg);
 		transform: rotate(180deg);
-		text-align: right;
+		text-align: end;
 		display: -webkit-box;
 		display: flex;
 		-webkit-box-pack: center;
@@ -2215,9 +2210,9 @@ p > object:only-child {
 }
 
 .menu-primary > ul > .current-menu-item {
-	background: var(--foreground-color);
-	color: var(--foreground-contrast-color);
-	box-shadow: 0.4rem 0.4rem 0 var(--foreground-color);
+	background: var(--foreground-color, #000);
+	color: var(--foreground-contrast-color, #fff);
+	box-shadow: 0.4rem 0.4rem 0 var(--foreground-color, #000);
 }
 
 @media (min-width: 47rem) {
@@ -2228,8 +2223,8 @@ p > object:only-child {
 
 .menu-primary ul {
 	display: block;
-	background: var(--foreground-color);
-	color: var(--foreground-contrast-color);
+	background: var(--foreground-color, #000);
+	color: var(--foreground-contrast-color, #fff);
 }
 
 .menu-primary ul li {
@@ -2278,9 +2273,9 @@ p > object:only-child {
 		margin-right: -1.5rem;
 	}
 	.menu-primary .menu-wrap ul {
-		text-align: left;
+		text-align: start;
 		margin: 0;
-		color: var(--foreground-contrast-color);
+		color: var(--foreground-contrast-color, #fff);
 	}
 	.menu-primary .menu-wrap .sub-menu {
 		-webkit-padding-start: 1.5rem;
@@ -2288,7 +2283,7 @@ p > object:only-child {
 	}
 	.menu-primary > .menu-wrap {
 		background: transparent;
-		color: var(--foreground-color);
+		color: var(--foreground-color, #000);
 	}
 	.menu-primary > .menu-wrap > li {
 		display: inline-block;
@@ -2360,7 +2355,7 @@ p > object:only-child {
 @media (min-width: 1200px) {
 	.pagination .nav-links:before, .pagination .nav-links:after {
 		content: '';
-		background: var(--foreground-color);
+		background: var(--foreground-color, #000);
 		width: 1.5rem;
 		display: block;
 	}
@@ -2368,8 +2363,8 @@ p > object:only-child {
 
 .pagination .nav-links > span,
 .pagination .nav-links > a {
-	color: var(--foreground-contrast-color);
-	background: var(--foreground-color);
+	color: var(--foreground-contrast-color, #fff);
+	background: var(--foreground-color, #000);
 	padding: 0.75rem 1.5rem;
 	display: inline-block;
 }
@@ -2454,7 +2449,7 @@ p > object:only-child {
 	.image-navigation .nav-links .nav-next,
 	.comment-navigation .nav-links .nav-next,
 	.post-navigation .nav-links .nav-next {
-		text-align: right;
+		text-align: end;
 	}
 }
 

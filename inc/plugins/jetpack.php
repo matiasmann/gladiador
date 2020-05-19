@@ -4,7 +4,7 @@
  *
  * @package Gladiador
  * @subpackage Jetpack
- * @author Ben Gillbanks <ben@prothemedesign.com>
+ * @author Matias Mann <matias@developress.org>
  * @link https://jetpack.com/
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU Public License
  */

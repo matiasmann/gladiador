@@ -9,7 +9,7 @@
  *
  * @package Gladiador
  * @subpackage PageTemplate
- * @author Ben Gillbanks <ben@prothemedesign.com>
+ * @author Matias Mann <matias@developress.org>
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU Public License
  */
 

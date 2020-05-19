@@ -23,6 +23,8 @@ input {
 	&[type=checkbox],
 	&[type=radio] {
 
+		padding: 0;
+		margin: 0;
 		cursor: pointer;
 		margin-inline-end: $style-spacing;
 		vertical-align: middle;
@@ -105,8 +107,9 @@ input {
 
 		&:checked::after {
 
-			top: 0.175rem;
-			left: 0.175rem;
+			top: 50%;
+			left: 50%;
+			transform: translate( -0.375rem, -0.375rem );
 			width: 0.75rem;
 			height: 0.75rem;
 			background: $white;
@@ -236,7 +239,7 @@ textarea {
 // <label class="{{modifier_class}}">Example Label</label>
 //
 // Styleguide elements.forms.label
-label {
+label, legend {
 
 	display: block;
 	font-weight: bold;
@@ -265,18 +268,16 @@ label {
 // <fieldset><legend>Gryffindor</legend></fieldset>
 //
 // Styleguide components.fieldset-legend
-legend {
-
-	@include post-meta-data;
-	font-family: $font-family-header;
-	padding: 0 ( $grid-gutter / 2 );
-
-}
 
 fieldset {
 
+
 	border: $border-width solid $black;
+	border: none;
 	padding: $grid-line-height ( $grid-gutter );
+	padding: 0;
 	margin: ( $grid-line-height * 2 ) 0;
+	margin-bottom: $grid-line-height;
+
 
 }

@@ -3,7 +3,7 @@
  * Allow users to edit the fonts on their website.
  *
  * @package Gladiador
- * @author Ben Gillbanks <ben@prothemedesign.com>
+ * @author Matias Mann <matias@developress.org>
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU Public License
  */
 
